@@ -1,0 +1,22 @@
+create database bdempresa;
+
+use bdempresa;
+
+create table depart
+(dep_codigo integer auto_increment primary key,
+dep_nome varchar(20) not null);
+
+create table cargo
+(car_codigo integer auto_increment primary key,
+car_nome varchar(30) not null);
+
+create table func
+(fun_matr integer primary key,
+fun_nome varchar(40) not null,
+fun_genero varchar(1) check(fun_genero in ('m','f')),
+fun_dt_adm date not null,
+fun_salar numeric(7,2) default 2000,
+dep_codigo integer not null,
+car_codigo integer not null,
+foreign key(dep_codigo) references depart(dep_codigo),
+foreign key(car_codigo) references cargo(car_codigo));
