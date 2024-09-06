@@ -25,3 +25,13 @@ insert into depart
 (dep_nome)
 values
 ('Financeiro'),('Comercial'),('Juridico'),('marketing');
+
+insert into cargo
+(car_nome)
+values
+('Presidente'),('Diretor'),('Gerente'),('Auxiliar'),('assistente');
+
+insert into func
+(fun_matr,fun_nome,fun_genero,fun_dt_adm,fun_salar,dep_codigo,car_codigo)
+values
+(123,'Paulo Santos','M','2008-05-10',2500,02,01);
