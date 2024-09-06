@@ -20,3 +20,8 @@ dep_codigo integer not null,
 car_codigo integer not null,
 foreign key(dep_codigo) references depart(dep_codigo),
 foreign key(car_codigo) references cargo(car_codigo));
+
+insert into depart
+(dep_nome)
+values
+('Financeiro'),('Comercial'),('Juridico'),('marketing');
