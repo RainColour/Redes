@@ -1,0 +1,26 @@
+#1
+select cur_nome, alu_mat, alu_nome, alu_serie
+from curso c, aluno a
+where c.cur_cod = a.cur_cod
+order by cur_nome, alu_mat;
+
+#2
+select dis_nome
+from curso c, disciplina d, grade g
+where d.dis_cod = g.dis_cod and g.cur_cod = c.cur_cod and cur_nome = "medicina" and gra_serie = 2;
+
+#3
+select alu_nome, ava_media, ava_bim, dis_nome, d.dis_cod
+from aluno a, avaliacao av, disciplina d
+where a.alu_mat = av.alu_mat and av.dis_cod = d.dis_cod
+order by d.dis_cod;
+
+#4
+select alu_nome, dis_nome, ava_media
+from aluno a, disciplina d, avaliacao av, curso c
+where a.cur_cod = c.cur_cod and a.alu_mat = av.alu_mat and av.dis_cod = d.dis_cod and alu_serie = 2 and cur_nome = "engenharia civil" and ava_media < 5;
+
+#6
+select alu_nome,cur_nome
+from aluno a, curso c
+where a.cur_cod = c.cur_cod and (cur_nome = "medicina" or cur_nome = "enfermagem");
